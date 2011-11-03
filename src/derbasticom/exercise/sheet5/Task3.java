@@ -70,5 +70,7 @@ public class Task3 {
             }
             System.out.println(shuffleDeck.get(i));
         }
+        
+        // TODO [sne] implement romme output
     }
 }
