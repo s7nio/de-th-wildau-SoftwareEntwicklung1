@@ -3,7 +3,8 @@ package derbasticom.exercise.sheet6;
 import derbasticom.utils.Reader;
 
 /**
- *
+ * The snake game.
+ * 
  * @author sne
  */
 public class SelfAvoidingWalk {
@@ -27,7 +28,7 @@ public class SelfAvoidingWalk {
             // current position (center)
             int x = N / 2;
             int y = N / 2;
-            
+
             while (x > 0 && x < N - 1 && y > 0 && y < N - 1) {
                 if (field[x - 1][y] && field[x + 1][y] && field[x][y - 1] && field[x][y + 1]) {
                     deadEnds++;
