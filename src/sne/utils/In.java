@@ -28,6 +28,7 @@ public class In {
     public static String readStr(String message) {
         System.out.print(message + ": ");
         try {
+            // TODO [sne] use #read();
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             return br.readLine();
         } catch (IOException ex) {
