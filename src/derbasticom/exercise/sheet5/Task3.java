@@ -4,7 +4,7 @@
  */
 package derbasticom.exercise.sheet5;
 
-import derbasticom.utils.Reader;
+import derbasticom.utils.In;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -40,7 +40,7 @@ public class Task3 {
         List<String> shuffleDeck = Arrays.asList(deck);
         Collections.shuffle(shuffleDeck);
 
-        int N = Reader.readInteger("Wie viele Poker Blätter werden benötigt");
+        int N = In.readInt("Wie viele Poker Blätter werden benötigt");
         
         /*int tmpGiver = 0;
         for (int i = 0; i < N; i++) {

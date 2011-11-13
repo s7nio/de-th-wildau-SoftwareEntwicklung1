@@ -1,23 +1,22 @@
 package derbasticom.exercise.sheet6;
 
-import derbasticom.utils.Reader;
+import derbasticom.utils.In;
 
 /**
  * The snake game.
  * 
- * @author sne
  */
 public class SelfAvoidingWalk {
 
     public static void main(String[] foo) {
 
-        /*int N = Reader.readInteger("Wie groß soll das Feld sein?");
+        /*int N = In.readInt("Wie groß soll das Feld sein?");
         boolean[][] field = new boolean[N][N];*/
 
         // lattice size
-        int N = Reader.readInteger("Feld-Größe");
+        int N = In.readInt("Feld-Größe");
         // number of trials
-        int T = Reader.readInteger("Anzahl der Versuche");
+        int T = In.readInt("Anzahl der Versuche");
         // trials resulting in dead end
         int deadEnds = 0;
 

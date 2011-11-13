@@ -4,8 +4,8 @@
  */
 package derbasticom.exercise.sheet5;
 
-import derbasticom.utils.Output;
-import derbasticom.utils.Reader;
+import derbasticom.utils.Out;
+import derbasticom.utils.In;
 import java.math.BigDecimal;
 
 /**
@@ -19,7 +19,7 @@ public class Task2 {
 
     public static void main(String[] foo) {
 
-        int fieldLength = Reader.readInteger("Arraylänge");
+        int fieldLength = In.readInt("Arraylänge");
         BigDecimal[] field = new BigDecimal[fieldLength];
 
         // random field init
@@ -27,7 +27,7 @@ public class Task2 {
             field[i] = BigDecimal.valueOf(Math.random());
         }
 
-        Output.printObjectArrayHeadline("The random array", field);
+        Out.printObjectArrayHeadline("The random array", field);
 
         // reverse array with a two help var
         /*int tmpFieldLength = fieldLength;
@@ -41,7 +41,7 @@ public class Task2 {
         tmpI++;
         tmpFieldLength--;
         }
-        Output.printObjectArrayHeadline("Reverse array", field);*/
+        Out.printObjectArrayHeadline("Reverse array", field);*/
 
         // reverse array with a other array
         BigDecimal[] tmpField = new BigDecimal[fieldLength];
@@ -50,12 +50,12 @@ public class Task2 {
             tmpField[j++] = field[i];
         }
         field = tmpField;
-        Output.printObjectArrayHeadline("Reverse array", field);
+        Out.printObjectArrayHeadline("Reverse array", field);
 
         // the easy and short way
         /*List<BigDecimal> list = Arrays.asList(field);
         Collections.reverse(list);
         field = list.toArray(new BigDecimal[fieldLength]);
-        Output.printObjectArrayHeadline("Reverse array", field);*/
+        Out.printObjectArrayHeadline("Reverse array", field);*/
     }
 }

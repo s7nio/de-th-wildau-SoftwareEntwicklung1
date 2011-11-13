@@ -1,6 +1,6 @@
 package derbasticom.exercise.sheet6;
 
-import derbasticom.utils.Reader;
+import derbasticom.utils.In;
 
 /**
  * Coupon collector problem.
@@ -11,13 +11,12 @@ import derbasticom.utils.Reader;
  * Repeatedly choose an integer i between 0 and N-1. 
  * Stop when we have at least one card of every type.
  * 
- * @author sne
  */
 public class CouponCollector {
 
     public static void main(String[] foo) {
 
-        int N = Reader.readInteger("Wie viele");
+        int N = In.readInt("Wie viele");
         // number of cards collected
         int cardcnt = 0;
         // number of distinct cards

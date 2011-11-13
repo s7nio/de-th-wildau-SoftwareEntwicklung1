@@ -1,17 +1,16 @@
 package derbasticom.exercise.sheet6;
 
-import derbasticom.utils.Reader;
+import derbasticom.utils.In;
 
 /**
  * Prime sieve.
  * 
- * @author sne
  */
 public class SieveOfEratosthenes {
 
     public static void main(String[] foo) {
 
-        int N = Reader.readInteger("Eingabe");
+        int N = In.readInt("Eingabe");
         // initially assume all integers are prime
         boolean[] isPrime = new boolean[N + 1];
 

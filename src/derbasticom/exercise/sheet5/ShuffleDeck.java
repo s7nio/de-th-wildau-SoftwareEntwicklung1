@@ -4,10 +4,6 @@
  */
 package derbasticom.exercise.sheet5;
 
-/**
- *
- * @author sne
- */
 public class ShuffleDeck {
 
     public static void main(String[] foo) {
