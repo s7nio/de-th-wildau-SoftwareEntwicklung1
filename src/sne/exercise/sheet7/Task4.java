@@ -16,10 +16,10 @@ public class Task4 {
         
         String fileName = In.readStr("Dateiname (file in launch path - TomSawyer.txt)");
 
-        String[] fieldLine = In.readFileByLine(fileName);
+        String[] lines = In.readFileByLine(fileName);
         int charCount = 0;
-        for (int i = 0; i < fieldLine.length; i++) {
-            charCount += fieldLine[i].length();
+        for (int i = 0; i < lines.length; i++) {
+            charCount += lines[i].length();
         }
 
         System.out.println("char count: " + charCount);
