@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package derbasticom.exercise.sheet5;
+package sne.exercise.sheet5;
 
-import derbasticom.utils.Out;
-import derbasticom.utils.In;
+import sne.utils.Out;
+import sne.utils.In;
 import java.util.Random;
 
 /**

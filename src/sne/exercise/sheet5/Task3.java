@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package derbasticom.exercise.sheet5;
+package sne.exercise.sheet5;
 
-import derbasticom.utils.In;
+import sne.utils.In;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

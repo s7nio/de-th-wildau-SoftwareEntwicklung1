@@ -1,6 +1,6 @@
-package derbasticom.exercise.sheet6;
+package sne.exercise.sheet6;
 
-import derbasticom.utils.In;
+import sne.utils.In;
 
 /**
  * Prime sieve.

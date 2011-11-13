@@ -1,6 +1,6 @@
-package derbasticom.exercise.sheet7;
+package sne.exercise.sheet7;
 
-import derbasticom.utils.*;
+import sne.utils.*;
 
 /**
  * Modifizieren Sie Ihr Programm aus Aufgabe 2 so, dass es alle Werte aus der 

@@ -1,7 +1,7 @@
-package derbasticom.exercise.sheet7;
+package sne.exercise.sheet7;
 
-import derbasticom.utils.In;
-import derbasticom.utils.Out;
+import sne.utils.In;
+import sne.utils.Out;
 import java.util.Random;
 
 /**

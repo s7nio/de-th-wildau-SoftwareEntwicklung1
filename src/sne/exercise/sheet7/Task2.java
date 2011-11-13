@@ -1,6 +1,6 @@
-package derbasticom.exercise.sheet7;
+package sne.exercise.sheet7;
 
-import derbasticom.utils.*;
+import sne.utils.*;
 
 /**
  * Schreiben Sie ein Programm, welches den Integer-Wert N als Kommandozeilen- 
