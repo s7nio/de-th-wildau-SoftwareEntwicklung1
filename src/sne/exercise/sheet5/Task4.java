@@ -46,7 +46,7 @@ public class Task4 {
             dist[k] = round(dist[k] / 36.0);
         }
 
-        Out.printObjectArrayHeadline("Kontrolle", dist);
+        Out.printObjectArrayMessage("Kontrolle", dist);
 
         int n = In.readInt("Anzahl der Würfe");
 
@@ -80,7 +80,7 @@ public class Task4 {
             resultField[i] = round(field[i].doubleValue() / 36.);
         }
 
-        Out.printObjectArrayHeadline("Kontrolle", resultField);
+        Out.printObjectArrayMessage("Kontrolle", resultField);
     }
 
     private static Double round(Double d) {

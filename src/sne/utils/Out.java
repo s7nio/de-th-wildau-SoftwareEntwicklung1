@@ -9,14 +9,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Help method...
+ * Help method for output stuff.
  * 
  * @author sne
  */
 public class Out {
 
     private static BufferedWriter bufferedWriter;
-    
+
+    /**
+     * Print the headline to the default system output (console).
+     * @param headline your headline text
+     */
     public static void headline(String headline) {
         System.out.println(headline);
         StringBuilder sb = new StringBuilder();
@@ -26,11 +30,22 @@ public class Out {
         System.out.println(headline);
     }
 
-    public static void printObjectArrayHeadline(String headline, Object[] objectArray) {
-        System.out.print(headline + ": ");
+    /**
+     * Print the message and object array in a well form to the default system output (console).
+     * 
+     * @param message String
+     * @param objectArray Object[]
+     */
+    public static void printObjectArrayMessage(String message, Object[] objectArray) {
+        System.out.print(message + ": ");
         printObjectArray(objectArray);
     }
 
+    /**
+     * Print object array in a well form.
+     * 
+     * @param objectArray Object[]
+     */
     public static void printObjectArray(Object[] objectArray) {
         for (int i = 0; i < objectArray.length; i++) {
             if (i > 0) {
@@ -46,16 +61,25 @@ public class Out {
     }
 
     /**
+     * Begin to write an file to your local file system.
+     * e.g. {@see #fileWrite(java.lang.Object)}, {@see #fileAppend(java.lang.Object)}, {@see #fileNewLine()}
+     * 
      * You find the file in your programm call path.
      * 
      * Don's forget to close the file!
+     * {@see #fileClose()}
+     * 
+     * Limitation: you can not write more files concurrent.
      * 
      * @param fileName 
      */
     public static void fileBegin(String fileName) {
 
         if (fileName == null || fileName.length() == 0) {
-            throw new IllegalArgumentException("Missing file name");
+            throw new IllegalArgumentException("Missing file name.");
+        }
+        if (bufferedWriter != null) {
+            throw new IllegalStateException("you can not write more files concurrent.");
         }
 
         try {
@@ -66,18 +90,30 @@ public class Out {
         }
     }
 
+    /**
+     * Close the file, which you write.
+     */
     public static void fileClose() {
 
-        if (bufferedWriter != null) {
-            try {
-                bufferedWriter.flush();
-                bufferedWriter.close();
-            } catch (IOException ex) {
-                System.err.println("File error: " + ex.getMessage());
-            }
+        if (bufferedWriter == null) {
+            System.err.print("Call first method beginFile(String fileName)");
+            return;
+        }
+
+        try {
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            bufferedWriter = null;
+        } catch (IOException ex) {
+            System.err.println("File error: " + ex.getMessage());
         }
     }
 
+    /**
+     * Write a message to the current file-line. After that, they make a line break.
+     * 
+     * @param messsage 
+     */
     public static void fileWrite(Object messsage) {
 
         if (bufferedWriter == null) {
@@ -93,25 +129,39 @@ public class Out {
         }
     }
 
+    /**
+     * Append the text in the opened file.
+     * 
+     * @param messsage 
+     */
     public static void fileAppend(Object messsage) {
 
-        if (bufferedWriter != null) {
-            try {
-                bufferedWriter.append(messsage.toString());
-            } catch (IOException ex) {
-                System.err.println("Error: " + ex.getMessage());
-            }
+        if (bufferedWriter == null) {
+            System.err.print("Call first method beginFile(String fileName)");
+            return;
+        }
+
+        try {
+            bufferedWriter.append(messsage.toString());
+        } catch (IOException ex) {
+            System.err.println("Error: " + ex.getMessage());
         }
     }
-    
+
+    /**
+     * Generate a line break.
+     */
     public static void fileNewLine() {
 
-        if (bufferedWriter != null) {
-            try {
-                bufferedWriter.newLine();
-            } catch (IOException ex) {
-                System.err.println("Error: " + ex.getMessage());
-            }
+        if (bufferedWriter == null) {
+            System.err.print("Call first method beginFile(String fileName)");
+            return;
+        }
+
+        try {
+            bufferedWriter.newLine();
+        } catch (IOException ex) {
+            System.err.println("Error: " + ex.getMessage());
         }
     }
 }

@@ -27,7 +27,7 @@ public class Task2 {
             field[i] = BigDecimal.valueOf(Math.random());
         }
 
-        Out.printObjectArrayHeadline("The random array", field);
+        Out.printObjectArrayMessage("The random array", field);
 
         // reverse array with a two help var
         /*int tmpFieldLength = fieldLength;
@@ -50,7 +50,7 @@ public class Task2 {
             tmpField[j++] = field[i];
         }
         field = tmpField;
-        Out.printObjectArrayHeadline("Reverse array", field);
+        Out.printObjectArrayMessage("Reverse array", field);
 
         // the easy and short way
         /*List<BigDecimal> list = Arrays.asList(field);

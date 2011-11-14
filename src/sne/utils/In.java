@@ -14,15 +14,17 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Help method...
+ * Help method for input stuff.
  * 
  * @author sne
  */
 public class In {
 
     /**
-     * Return the input from the default input (console).
-     * @param message text
+     * Read from the default system input (console) and parse that to an String.
+     * Return null in error cases.
+     * 
+     * @param message which is displayed befor an input
      * @return Input string
      */
     public static String readStr(String message) {
@@ -38,8 +40,10 @@ public class In {
     }
 
     /**
-     * Use {@link #readStr(java.lang.String)}
-     * @param message text
+     * Read from the default system input (console) and parse that to an Integer.
+     * Return null in error cases.
+     * 
+     * @param message which is displayed befor an input
      * @return Parsed input
      */
     public static Integer readInt(String message) {
@@ -52,8 +56,10 @@ public class In {
     }
 
     /**
-     * Use {@link #readStr(java.lang.String)}
-     * @param message text
+     * Read from the default system input (console) and parse that to an Double.
+     * Return null in error cases.
+     * 
+     * @param message which is displayed befor an input
      * @return Parsed input
      */
     public static Double readDouble(String message) {
@@ -67,7 +73,8 @@ public class In {
 
     /**
      * Help method which read from the default input (console).
-     * @param message text
+     * 
+     * @param message which display in front of the input
      */
     private static String read(String message) throws IOException {
         System.out.print(message + ": ");
@@ -75,6 +82,12 @@ public class In {
         return br.readLine();
     }
 
+    /**
+     * Return null in error cases.
+     * 
+     * @param fileName
+     * @return String[] which is splitted by line
+     */
     public static String[] readFileByLine(String fileName) {
 
         try {
@@ -85,12 +98,14 @@ public class In {
             String strLine;
             List<String> resultList = new ArrayList<String>();
 
-            // line by line baby
+            // read line by line
             while ((strLine = br.readLine()) != null) {
                 resultList.add(strLine);
             }
 
             dis.close();
+            
+            // convert list to an array
             return resultList.toArray(new String[resultList.size()]);
         } catch (Exception ex) {
             System.err.println("File error: " + ex.getMessage());
@@ -98,9 +113,18 @@ public class In {
         }
     }
 
-    // TODO [sne] place for refacortings
+    /**
+     * This method read a file (by fileName parameter) and split the content 
+     * by the committed separator parameter.
+     * Return null in error cases.
+     * 
+     * @param fileName String
+     * @param separator String
+     * @return String[] which is splitted by the separator
+     */
     public static String[] readFile(String fileName, String separator) {
 
+        // TODO [sne] place for refacortings
         try {
             /*FileReader fr = new FileReader(fileName);
             BufferedReader br = new BufferedReader(fr);
@@ -109,7 +133,7 @@ public class In {
             line = br.readLine();
             // line and line, baby
             while (line != null){
-            System.out.println(line);
+            // do...
             line = br.readLine();
             }
             br.close();*/
@@ -121,12 +145,14 @@ public class In {
             String strLine;
             List<String> resultList = new ArrayList<String>();
 
-            // line by line baby
+            // read line by line
             while ((strLine = br.readLine()) != null) {
                 resultList.addAll(Arrays.asList(strLine.split(separator)));
             }
 
             dis.close();
+            
+            // convert list to an array
             return resultList.toArray(new String[resultList.size()]);
         } catch (Exception ex) {
             System.err.println("File error: " + ex.getMessage());
