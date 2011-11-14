@@ -32,18 +32,23 @@ public class exercise3 {
         while (!StdIn.isEmpty()) {
             a = StdIn.readDouble();
             count++;
-
+            
+            // maximum
             if (a > max) {
                 max = a;
             }
+            // minimun
             if (a < min) {
                 min = a;
             }
             sum = sum + a;
         }
+        // average
         avg = sum / count;
-//        stdev = Math.sqrt
+        
+        
 
+        
 //        for (int i = 0; i < N; i++) {
 //            a[i] = StdIn.readDouble();
 //        }

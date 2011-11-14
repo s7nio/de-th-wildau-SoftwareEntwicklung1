@@ -40,7 +40,7 @@ public class Task3 {
         List<String> shuffleDeck = Arrays.asList(deck);
         Collections.shuffle(shuffleDeck);
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
         int N = In.readInt("Wie viele Poker Blätter werden benötigt");
         
         /*int tmpGiver = 0;
@@ -61,8 +61,8 @@ public class Task3 {
         tmpGiver++;
         }
         }*/
-=======
-        int N = Reader.readInteger("Wie viele Poker Blätter werden benötigt");
+//=======
+//        int N = Reader.readInteger("Wie viele Poker Blätter werden benötigt");
 
 //        int tmpGiver = 0;
 //        for (int i = 0; i < N; i++) {
@@ -82,7 +82,7 @@ public class Task3 {
 //                tmpGiver++;
 //            }
 //        }
->>>>>>> sheet7
+//>>>>>>> sheet7
 
         for (int i = 0; i < (N * 5); i++) {
             if (i >= 52) {
