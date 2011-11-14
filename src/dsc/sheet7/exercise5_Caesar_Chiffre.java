@@ -16,7 +16,7 @@ public class exercise5_Caesar_Chiffre {
         int k = Integer.parseInt(args[0]);
 
         StdOut.println("Type in some text.");
-        StdIn.
+//        StdIn.
     }
     
 }

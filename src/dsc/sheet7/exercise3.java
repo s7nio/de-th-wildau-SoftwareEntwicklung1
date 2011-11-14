@@ -25,6 +25,8 @@ public class exercise3 {
         double avg = 0.0;
         double stdev = 0.0;
         int count = 0;
+        
+        
 
         // user input
         while (!StdIn.isEmpty()) {
