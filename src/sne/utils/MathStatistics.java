@@ -37,7 +37,7 @@ public class MathStatistics {
         this.sumOfSquanres += value * value;
         this.mean += (value - this.mean) / this.count;
         this.standardDeviation = Math.sqrt(
-                (this.count * this.sumOfSquanres - this.sum * this.sum)
+                ( (this.count * this.sumOfSquanres) - (this.sum * this.sum) )
                 / (this.count * (this.count - 1)));
         this.variance = this.standardDeviation * this.standardDeviation;
     }

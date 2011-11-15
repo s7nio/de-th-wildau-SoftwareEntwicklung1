@@ -18,11 +18,13 @@ public class Task4 {
 
         String[] lines = In.readFileByLine(fileName);
         int charCount = 0;
+        int wordCound = 0;
         for (int i = 0; i < lines.length; i++) {
             charCount += lines[i].length();
+            wordCound += lines[i].split(" ").length;
         }
 
         System.out.println("char count: " + charCount);
-        System.out.println("word count: " + In.readFile(fileName, " ").length); // performance ugly, but short
+        System.out.println("word count: " + wordCound); // performance ugly, but short
     }
 }
