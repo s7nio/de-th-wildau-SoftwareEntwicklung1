@@ -19,19 +19,37 @@ public class exercise5_Caesar_Chiffre {
             'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
         StdOut.println("Type in a text:");
+        String original = StdIn.readLine();
+        original = original.toUpperCase();
+        char a = ' ';
 
-        while (!StdIn.isEmpty()) {
-            char a = StdIn.readChar();
+        for (int i = 0; i < original.length(); i++) {
+            a = original.charAt(i);
 
-            for (int i = 0; i < alphabet.length; i++) {
-                if (a == alphabet[i]) {
-                    StdOut.print(alphabet[i + k]);
-                }  else if (a == ' ') {
-                    StdOut.print(' '); 
-                } /*else {
-                    StdOut.print(alphabet[i]);
-                } */
+
+            for (int j = 0; j < alphabet.length; j++) {
+                if (a == alphabet[j]) {
+                    StdOut.print(alphabet[j + k]);
+                    break;
+                }
             }
         }
+
+
+        /* while (!StdIn.isEmpty()) {
+        char a = StdIn.readChar();
+        
+        for (int i = 0; i < alphabet.length; i++) {
+        if (a == alphabet[i]) {
+        StdOut.print(alphabet[i + k]);
+        } else {
+        StdOut.print(a);
+        }
+        }
+        if (a == ' ') {
+        StdOut.print(' ');
+        
+        }
+        } */
     }
 }

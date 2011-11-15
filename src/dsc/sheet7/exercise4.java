@@ -19,19 +19,17 @@ public class exercise4 {
      * (siehe e- Learning Plattform)
      */
     public static void main(String[] args) {
-        int countString = 0;
-        int countChar = 0;
         String string = "";
-        
+        String[] a = new String[0];
+
         StdOut.println("Please enter a text and hit 'ctrl + d' when done.");
 
         while (!StdIn.isEmpty()) {
-            string = StdIn.readString();
-            countString++;
-            countChar = countChar + string.length();
+            string = StdIn.readAll();
+            a = string.split(" ");
+
         }
- 
-        StdOut.println("The text consists of " + countString + " words.");
-        StdOut.println("The text consists of " + countChar + " characters without spaces.");
+        StdOut.println("The text consists of " + a.length + " words.");
+        StdOut.println("The text consists of " + string.length() + " characters without spaces.");
     }
 }

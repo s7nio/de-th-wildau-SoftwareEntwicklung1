@@ -47,8 +47,9 @@ public class exercise2 {
         
         // standard deviation
         for (int i = 0; i < a.length; i++) {
-            stdev = Math.sqrt(((avg - a[i]) * (avg - a[i])) / a.length);
+            stdev = stdev + ((avg - a[i]) * (avg - a[i]));
         }
+        stdev = Math.sqrt(stdev / (a.length - 1));
         
         // output
         StdOut.println("The maximum is: " + max);
