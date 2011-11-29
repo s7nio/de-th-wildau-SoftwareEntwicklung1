@@ -2,11 +2,6 @@ package sne.exercise.sheet9;
 
 import StdLib.StdDraw;
 import StdLib.StdIn;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import sne.utils.Out;
 
 /**
  * Histogramm. Schreiben Sie ein Programm, welches von der Standardeingabe eine
@@ -32,83 +27,73 @@ public class Task2 {
         if (foo != null && foo.length == 3) {
             N = Integer.parseInt(foo[0]);
             if (N <= 0 || N > 10) {
-                Out.exit("Your N is incorrect.");
+                throw new IllegalArgumentException("N is incorrect");
             }
             l = Integer.parseInt(foo[1]);
             r = Integer.parseInt(foo[2]);
             if (l >= r){
-                Out.exit("Your l is >= r.");
+                throw new IllegalStateException("l is >= r");
             } 
         } else {
-            Out.exit("You fail!");
+            throw new IllegalArgumentException("Missing arguments. Look jvadoc");
         }
         
-        int step = (r - l) / N;
-        System.out.println("step " + step);
-        /*if ((r-l)%N != 0)
-            step++;*/
-        
-        System.out.println("step " + step);
+        double step = (r - l) / (double) N;
         
         int[] hix = new int[N];
-        int numberCount = 0;
 
-        int i, myValue, checkValue;
+        int value;
+        double checkValue;
         while(!StdIn.isEmpty()) {
             
-            myValue = StdIn.readInt();
-            numberCount++;
+            value = StdIn.readInt();
             
-            // check, is myValue not in the range of l & r
-            if (myValue < l || myValue > r) {
+            // check, is value not in the range of l & r
+            if (value <= l || value >= r) {
                 continue;
             }
             
-            for (i = 0; i < N; i++) {
+            // sort value
+            for (int i = 0; i < N; i++) {
                 checkValue = l + (step * i);
-                if (myValue >= checkValue && myValue <= (checkValue + step)) {
+                // check    vv: lower limit     vv: upper limit
+                if (value >= checkValue && value <= (checkValue + step)) {
                     hix[i]++;
                     break;
                 }
             }
         }
         
-        System.out.println("number count " + numberCount);
-        for (i = 0; i < N; i++) {
+        // test print
+        for (int i = 0; i < N; i++) {
             System.out.println("hix " + i + ". " + (l + (step*i)) + " to " +(l + (step*i) + step)
                     + " - count " + hix[i]);
         }
         
-        //printHix(hix, N, l, r, step);
+        printHix(hix, N, l, r, step);
     }
     
     /**
-     * Print the histogram.
-     * 
-     * @param value
-     * @param x 
+     * Print histogram.
      */
-    private static void printHix(int[] hix, int N, int l, int r, int step) {
+    private static void printHix(int[] hix, int N, int l, int r, double step) {
         
         final int HIX_WIDTH = 10;
         
-        StdDraw.setXscale(0, 50 + (HIX_WIDTH * N));
-        StdDraw.setXscale(0, 50 + (r-l));
-        //StdDraw.setXscale(0,150);
-        //StdDraw.setYscale(0, 100);
+        StdDraw.setXscale(0, r - l);
+        StdDraw.setYscale(0, HIX_WIDTH * N);
         
         // axes
-        StdDraw.line(0, 0, 10, 0);
+        StdDraw.line(0, 0, HIX_WIDTH * N, 0);
         StdDraw.text(HIX_WIDTH * N, 0, "x");
-        StdDraw.line(0, 0, 0, 10);
-        StdDraw.text(0, r-l, "y");
+        StdDraw.line(0, 0, 0, r - l);
+        StdDraw.text(0, r - l , "y");
         
         
-        for (int i = 0; i<N; i++)
+        for (int i = 0; i < N; i++)
         {
-            //StdDraw.filledRectangle(5*i+10*i, (Feld[i]/Anzahl*100)/2 , 5, (Feld[i]/Anzahl*100)/2);
-            //StdDraw.filledRectangle(5, 10, 5, 10);  (Feld[i]/Anzahl)*100)/2
-            StdDraw.filledRectangle(0, HIX_WIDTH, step, hix[i]);
+            StdDraw.filledRectangle(step * i, (r - l) / 2, i * N / 3, hix[i] / 2);
+            StdDraw.text(step * i, r-l-10, String.valueOf(hix[i]));
         }
     }
 }
