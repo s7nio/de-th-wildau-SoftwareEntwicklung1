@@ -7,6 +7,8 @@ package sne.utils;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * Help method for output stuff.
@@ -163,5 +165,13 @@ public class Out {
         } catch (IOException ex) {
             System.err.println("Error: " + ex.getMessage());
         }
+    }
+  
+    
+    public static String round(double a) {
+        BigDecimal bd = new BigDecimal(a);
+        bd = bd.setScale(2, RoundingMode.HALF_UP);
+        System.out.println(bd);
+        return bd.toString();
     }
 }
