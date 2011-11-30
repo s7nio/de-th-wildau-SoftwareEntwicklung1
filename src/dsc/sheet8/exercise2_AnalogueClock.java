@@ -56,7 +56,7 @@ public class exercise2_AnalogueClock {
 
             StdDraw.setPenColor(StdDraw.WHITE);
             StdDraw.filledSquare(0, 0, 1);
-            StdDraw.picture(0, 0, "clockface.png", 2.3, 2.3);
+            StdDraw.picture(0, 0, "images/clockface.png", 2.3, 2.3);
             StdDraw.setPenColor(StdDraw.BLACK);
             StdDraw.setPenRadius(0.002);
             StdDraw.line(0, 0, Xsecond, Ysecond);

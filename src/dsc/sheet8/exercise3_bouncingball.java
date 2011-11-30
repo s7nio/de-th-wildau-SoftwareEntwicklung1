@@ -34,11 +34,11 @@ public class exercise3_bouncingball {
             
             if (Math.abs(rx + vx) + radius > 1.0) {
                 vx = -vx;
-                StdAudio.play("Clap.wav");
+                StdAudio.play("sounds/Clap.wav");
             }
 
             if (ry + vy + radius > 1.0) {
-                StdAudio.play("Clap.wav");                
+                StdAudio.play("sounds/Clap.wav");                
             }
             
             if (Math.abs(ry + vy) + radius > 1.0) {
@@ -46,7 +46,7 @@ public class exercise3_bouncingball {
             }
             
             if (ry - vy - radius < -1.0) {
-                StdAudio.play("DD_Crash20.wav");
+                StdAudio.play("sounds/DD_Crash20.wav");
                 vy = vy * 0.85;
             }
 
@@ -56,9 +56,9 @@ public class exercise3_bouncingball {
             
             StdDraw.setPenColor(StdDraw.GRAY);
             StdDraw.filledSquare(0.0, 0.0, 1.0);
-            StdDraw.picture(0.0, 0.0, "space2.jpg", 2.0, 2.0);
+            StdDraw.picture(0.0, 0.0, "images/space2.jpg", 2.0, 2.0);
             StdDraw.setPenColor(StdDraw.BLACK);
-            StdDraw.picture(rx, ry, "basketball.gif", 2 * radius, 2 * radius);
+            StdDraw.picture(rx, ry, "images/basketball.gif", 2 * radius, 2 * radius);
 //          StdDraw.filledCircle(rx, ry, radius);
             StdDraw.show(20);
         }

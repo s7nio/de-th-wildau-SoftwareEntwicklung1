@@ -18,6 +18,8 @@ public class Task1 {
         StdDraw.setXscale(-10, 10);
         StdDraw.setYscale(-10, 10);
 
+        // FIXME [sne] re-engineer karo und herz
+        
         /*/ xmin, xmax, ymin, ymax
         pik(); // -10,0 , 0,10
         karo(); // -10,0 , 0,-10

@@ -74,7 +74,7 @@ public class Task2 {
     }
     
     /**
-     * Print histogram.
+     * FIXME [sne] Print histogram.
      */
     private static void printHix(int[] hix, int N, int l, int r, double step) {
         
