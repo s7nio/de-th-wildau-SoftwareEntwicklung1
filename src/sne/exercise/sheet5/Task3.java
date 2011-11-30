@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package sne.exercise.sheet5;
 
 import sne.utils.In;
@@ -40,7 +36,6 @@ public class Task3 {
         List<String> shuffleDeck = Arrays.asList(deck);
         Collections.shuffle(shuffleDeck);
 
-//<<<<<<< HEAD
         int N = In.readInt("Wie viele Poker Blätter werden benötigt");
         
         /*int tmpGiver = 0;
@@ -61,28 +56,6 @@ public class Task3 {
         tmpGiver++;
         }
         }*/
-//=======
-//        int N = Reader.readInteger("Wie viele Poker Blätter werden benötigt");
-
-//        int tmpGiver = 0;
-//        for (int i = 0; i < N; i++) {
-//
-//            System.out.println("==== Poker-Blatt " + (i + 1) + " ===="); // or empty line
-//
-//            for (int j = 0; j < 5; j++) {
-//
-//                // check if the deck stack empty
-//                if (tmpGiver >= 52) {
-//                    System.out.println("The deck stack is empty!");
-//                    break; // need a second check and break in the outside loop
-//                    //Runtime.getRuntime().exit(0);
-//                }
-//
-//                System.out.println(shuffleDeck.get(tmpGiver));
-//                tmpGiver++;
-//            }
-//        }
-//>>>>>>> sheet7
 
         for (int i = 0; i < (N * 5); i++) {
             if (i >= 52) {
@@ -94,6 +67,6 @@ public class Task3 {
             System.out.println(shuffleDeck.get(i));
         }
         
-        // TODO [sne] implement romme output
+        // XXX [sne] implement romme output
     }
 }
