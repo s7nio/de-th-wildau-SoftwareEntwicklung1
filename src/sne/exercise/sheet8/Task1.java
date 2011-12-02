@@ -20,13 +20,13 @@ public class Task1 {
 
         // FIXME [sne] re-engineer karo und herz
         
-        /*/ xmin, xmax, ymin, ymax
+        // xmin, xmax, ymin, ymax
         pik(); // -10,0 , 0,10
         karo(); // -10,0 , 0,-10
         herz(); // 0,10 , 0,10
         kreuz(); // 0,10 , 0,-10
         
-        /*/quickAndDirty();
+        //quickAndDirty();
     }
 
     private static void quickAndDirty() {
@@ -65,18 +65,11 @@ public class Task1 {
 
     protected static void karo() {
         
-        double[] x = {-5, -8, -5, -2};
+        /*double[] x = {-5, -8, -5, -2};
         double[] y = {-.5, -4, -7.5, -4};
         StdDraw.setPenColor(Color.RED);
-        StdDraw.filledPolygon(x, y);
-        
-        // x, y
-        // w
-        // h
-        // x, y+h/2
-        // x-w/2, y
-        // x, y-h/2
-        // x+w/2, y
+        StdDraw.filledPolygon(x, y);*/
+        sne.exercise.sheet10.Task2.diamond(-5, -5, 6.5, 5.0);
     }
 
     protected static void herz() {
