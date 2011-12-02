@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dsc.sheet9;
+package dsc.sheet09;
 
 import StdLib.StdDraw;
 import StdLib.StdIn;
@@ -14,7 +14,7 @@ import sne.utils.Out;
  *
  * @author david
  */
-public class exercise2_HIstogramm {
+public class exercise2_Histogramm {
 
     /* Histogramm. Schreiben Sie ein Programm, welches von der Standardeingabe eine
      * (nahezu) beliebige Menge an Double-Werten zwischen 0 und 100 einliest.

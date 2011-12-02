@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dsc.sheet7;
+package dsc.sheet07;
 
 import StdLib.*;
 import java.util.Arrays;

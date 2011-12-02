@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dsc.sheet8;
+package dsc.sheet08;
 
 import StdLib.*;
 
