@@ -74,14 +74,25 @@ public class Task1 {
 
     protected static void herz() {
 
-        StdDraw.setPenColor(Color.RED);
+        /*StdDraw.setPenColor(Color.RED);
         StdDraw.filledCircle(6.4, 7, 1.5);
         StdDraw.filledCircle(3.6, 7, 1.5);
         double[] x = {7.8, 5, 2.2, 5};
         double[] y = {6.6, 6.6, 6.6, 2};
-        StdDraw.filledPolygon(x, y);
+        StdDraw.filledPolygon(x, y);*/
         
-        // 
+        double x = 5;
+        double y = 5;
+        double height = 6.5;
+        double width = 5;
+        StdDraw.setPenColor(Color.RED);
+        
+        sne.exercise.sheet10.Task2.diamond(x, y, height, width);
+        
+        double r = (Math.sqrt( (Math.pow(2, height/2) + Math.pow(2, width/2)) )) / 2;
+        StdDraw.filledCircle(x - (width/4), y + (height / 4), r);
+        
+        StdDraw.filledCircle(x + (width/4), y + (height / 4), r);
     }
 
     protected static void kreuz() {
