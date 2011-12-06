@@ -14,7 +14,7 @@ import sne.utils.Out;
  *
  * @author david
  */
-public class exercise2_HIstogramm {
+public class exercise2_Histogramm {
 
     /* Histogramm. Schreiben Sie ein Programm, welches von der Standardeingabe eine
      * (nahezu) beliebige Menge an Double-Werten zwischen 0 und 100 einliest.
