@@ -19,27 +19,36 @@ import StdLib.StdOut;
  */
 public class exercise3_AnyAndAll {
 
-    public static boolean any(boolean[] values) {
+    public static boolean any(boolean[] values, boolean c) {
 
         for (int i = 0; i < values.length; i++) {
 
-            if (values[i] == true) {
+            if (values[i] == c) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean all(boolean[] values) {
-
-        for (int i = 0; i < values.length; i++) {
-
-            if (values[i] != true) {
-                return false;
-            }
-        }
-        return true;
+    
+    public static boolean any(boolean[] values) {
+        return any(values, true);
     }
+
+    public static boolean all(boolean[] values) {
+        return !any(values, false);
+    }
+
+//    public static boolean all(boolean[] values) {
+//
+//        for (int i = 0; i < values.length; i++) {
+//
+//            if (values[i] != true) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
     public static void main(String[] args) {
 
@@ -49,7 +58,7 @@ public class exercise3_AnyAndAll {
         StdOut.println("false, false, false: " + any(new boolean[]{false, false, false}));
 
 
-        StdOut.println("true, true, true: " + all(new boolean[]{true, true, false}));
+        StdOut.println("true, true, false: " + all(new boolean[]{true, true, false}));
         StdOut.println("true, false, false: " + all(new boolean[]{true, false, false}));
         StdOut.println("false, false, false: " + all(new boolean[]{false, false, false}));
     }
