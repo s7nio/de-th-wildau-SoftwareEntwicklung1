@@ -25,7 +25,6 @@ public class Task1 {
 
         Out.fileBegin("sne_sheet7task1.txt");
         for (int i = 0; i < 10000; i++) {
-            //Out.fileWrite(i + 1  + ". " + random.nextInt(101)); // ugly
             Out.fileWrite(random.nextInt(101));
         }
         Out.fileClose();

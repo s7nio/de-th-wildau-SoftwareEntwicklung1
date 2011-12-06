@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package sne.utils;
+package sne.exercise.sheet7;
 
 /**
  * Help methid...

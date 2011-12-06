@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package sne.exercise.sheet5;
 
 import sne.utils.Out;
@@ -42,7 +38,6 @@ public class Task4 {
             }
         }
         for (int k = 1; k <= 12; k++) {
-            //dist[k] /= 36.0
             dist[k] = round(dist[k] / 36.0);
         }
 
@@ -76,7 +71,6 @@ public class Task4 {
 
         // calculate result
         for (int i = 2; i <= 12; i++) {
-            //resultField[i] = Double.valueOf((double) field[i] / 36.0);
             resultField[i] = round(field[i].doubleValue() / 36.);
         }
 

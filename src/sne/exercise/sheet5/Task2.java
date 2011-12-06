@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package sne.exercise.sheet5;
 
 import sne.utils.Out;
@@ -29,7 +25,9 @@ public class Task2 {
 
         Out.printObjectArrayMessage("The random array", field);
 
-        // reverse array with a two help var
+        /*
+         * reverse array with a two help var
+         */
         /*int tmpFieldLength = fieldLength;
         int tmpI = 0;
         BigDecimal tmpSwap;
@@ -43,7 +41,9 @@ public class Task2 {
         }
         Out.printObjectArrayHeadline("Reverse array", field);*/
 
-        // reverse array with a other array
+        /*
+         * reverse array with a other array
+         */
         BigDecimal[] tmpField = new BigDecimal[fieldLength];
         int j = 0;
         for (int i = field.length - 1; i >= 0; i--) {
@@ -52,7 +52,9 @@ public class Task2 {
         field = tmpField;
         Out.printObjectArrayMessage("Reverse array", field);
 
-        // the easy and short way
+        /*
+         * the easy and short way
+         */
         /*List<BigDecimal> list = Arrays.asList(field);
         Collections.reverse(list);
         field = list.toArray(new BigDecimal[fieldLength]);

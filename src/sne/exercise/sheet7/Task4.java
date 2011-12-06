@@ -25,6 +25,6 @@ public class Task4 {
         }
 
         System.out.println("char count: " + charCount);
-        System.out.println("word count: " + wordCound); // performance ugly, but short
+        System.out.println("word count: " + wordCound);
     }
 }

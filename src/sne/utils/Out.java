@@ -31,6 +31,18 @@ public class Out {
         }
         System.out.println(headline);
     }
+    
+    public static void printObjectArrayMessage(String message, double... doubleArray) {
+        System.out.print(message + ": ");
+        
+        // convert
+        Object[] objectArray = new Object[doubleArray.length];
+        for (int i = 0; i < doubleArray.length; i++) {
+            objectArray[i] = doubleArray[i];
+        }
+        
+        printObjectArray(objectArray);
+    }
 
     /**
      * Print the message and object array in a well form to the default system output (console).
