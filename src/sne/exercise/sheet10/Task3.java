@@ -16,6 +16,9 @@ public class Task3 {
 
     private static final boolean T = true;
     private static final boolean F = false;
+    
+    private static double min = Double.MAX_VALUE;
+    private static double max = Double.MIN_VALUE;
 
     public static void main(String[] foo) {
 
@@ -26,46 +29,24 @@ public class Task3 {
         System.out.println("f t t t t = all " + all(new boolean[] {F, T, T, T, T}));
         System.out.println("t t t t t = all " + all(new boolean[] {T, T, T, T, T}));
     }
-
-    private static boolean any(boolean[] values) {
-
+    
+    private static boolean any(boolean[] values, boolean bool) {
+        
         for (int i = 0; i < values.length; i++) {
             if (values[i]) {
                 return true;
             }
         }
         return false;
+    }
+
+    private static boolean any(boolean[] values) {
+
+        return any(values, true);
     }
 
     private static boolean all(boolean[] values) {
 
-        for (int i = 0; i < values.length; i++) {
-            if (!values[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Optimized {@link #check(boolean, boolean, boolean)} method.
-     * 
-     * @param trueValues count of true boolean
-     * @param values boolean collection
-     * @return boolean has this count of the values
-     */
-    private static boolean check(int trueValues, boolean... values) {
-
-        int count = 0;
-        for (int i = 0; i < values.length; i++) {
-
-            if (count >= trueValues) {
-                return true;
-            }
-            if (values[i]) {
-                count++;
-            }
-        }
-        return false;
+        return !any(values, false);
     }
 }

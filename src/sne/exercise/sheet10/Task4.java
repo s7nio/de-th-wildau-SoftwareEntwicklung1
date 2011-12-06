@@ -22,6 +22,10 @@ import sne.utils.*;
  */
 public class Task4 {
     
+    // static is not so good, because they exist from class load
+    private static double min = Double.MAX_VALUE;
+    private static double max = Double.MIN_VALUE;
+    
     public static void main(String[] foo) {
 
         StdOut.print("Wieviele Werte möchten Sie eingeben: ");
@@ -34,11 +38,13 @@ public class Task4 {
             StdOut.print((i + 1) + "/" + (count) + ": ");
             input[i] = StdIn.readDouble();
             // for best performance - find here min and max value
+            if (min > input[i]) min = input[i];
+            if (max < input[i]) max = input[i];
         }
 
         Out.printObjectArrayMessage("Orginal", input);
-        StdOut.println("Min: " + findMin(input));
-        StdOut.println("Max: " + findMax(input));
+        StdOut.println("Min: " + min);
+        StdOut.println("Max: " + max);
         Out.printObjectArrayMessage("Scale", scale(input));
     }
 
@@ -66,18 +72,7 @@ public class Task4 {
      */
     private static double[] scale(double[] values) {
 
-        /*/ for better performance - find here min and max value
-        double min = Double.MAX_VALUE;
-        double max = Double.MIN_VALUE;
-        // find min and max value
-        for (int i = 0; i < values.length; i++) {
-            if (values[i] < min) {
-                min = values[i];
-            } else if (values[i] > max) {
-                max = values[i];
-            }
-        }*/
-        
+        // for better performance - find here min and max value
         return scale(values, findMin(values), findMax(values));
     }
     
@@ -88,13 +83,13 @@ public class Task4 {
      * @return min value
      */
     private static double findMin(double[] values) {
-        double min = Double.MAX_VALUE;
+        double _min = Double.MAX_VALUE;
         for (int i = 0; i < values.length; i++) {
-            if (values[i] < min) {
-                min = values[i];
+            if (values[i] < _min) {
+                _min = values[i];
             }
         }
-        return min;
+        return _min;
     }
     
     /**
@@ -104,12 +99,12 @@ public class Task4 {
      * @return max value
      */
     private static double findMax(double[] values) {
-        double max = Double.MIN_VALUE;
+        double _max = Double.MIN_VALUE;
         for (int i = 0; i < values.length; i++) {
-            if (values[i] > max) {
-                max = values[i];
+            if (values[i] > _max) {
+                _max = values[i];
             }
         }
-        return max;
+        return _max;
     }
 }

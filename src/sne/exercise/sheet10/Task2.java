@@ -27,8 +27,8 @@ public class Task2 {
     public static void diamond(double xCoordinate, double yCoordinate, double height, double width) {
         Color oldColor = StdDraw.getPenColor();
         StdDraw.setPenColor(Color.RED);
-        StdDraw.filledPolygon(calcX(new BigDecimal(xCoordinate), new BigDecimal(width)), 
-                calcY(new BigDecimal(yCoordinate), new BigDecimal(height)));
+        StdDraw.filledPolygon(calcXValues(new BigDecimal(xCoordinate), new BigDecimal(width)), 
+                calcYValues(new BigDecimal(yCoordinate), new BigDecimal(height)));
         StdDraw.setPenColor(oldColor);
     }
     
@@ -51,7 +51,7 @@ public class Task2 {
      * @param width
      * @return x coordinates
      */
-    private static double[] calcX(BigDecimal x, BigDecimal width) {
+    private static double[] calcXValues(BigDecimal x, BigDecimal width) {
         BigDecimal halfWidth = width.divide(new BigDecimal(2));
         return new double[]{x.doubleValue(), x.add(halfWidth).doubleValue(), 
             x.doubleValue(), x.subtract(halfWidth).doubleValue()};
@@ -64,7 +64,7 @@ public class Task2 {
      * @param width
      * @return y coordinates
      */
-    private static double[] calcY(BigDecimal y, BigDecimal height) {
+    private static double[] calcYValues(BigDecimal y, BigDecimal height) {
         BigDecimal halfHeight = height.divide(new BigDecimal(2));
         return new double[]{y.subtract(halfHeight).doubleValue(), y.doubleValue(), 
             y.add(halfHeight).doubleValue(), y.doubleValue()};
