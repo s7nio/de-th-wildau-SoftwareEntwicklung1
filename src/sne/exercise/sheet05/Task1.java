@@ -1,4 +1,4 @@
-package sne.exercise.sheet5;
+package sne.exercise.sheet05;
 
 /**
  * Was würde von den folgenden Codefragmenten auf dem Bildschirm ausgegeben werden?

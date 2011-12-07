@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package sne.exercise.sheet5;
+package sne.exercise.sheet05;
 
 public class ShuffleDeck {
 

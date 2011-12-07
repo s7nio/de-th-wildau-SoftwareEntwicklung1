@@ -1,4 +1,4 @@
-package sne.exercise.sheet5;
+package sne.exercise.sheet05;
 
 import sne.utils.Out;
 import sne.utils.In;
