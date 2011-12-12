@@ -31,16 +31,16 @@ public class Out {
         }
         System.out.println(headline);
     }
-    
+
     public static void printObjectArrayMessage(String message, double... doubleArray) {
         System.out.print(message + ": ");
-        
+
         // convert
         Object[] objectArray = new Object[doubleArray.length];
         for (int i = 0; i < doubleArray.length; i++) {
             objectArray[i] = doubleArray[i];
         }
-        
+
         printObjectArray(objectArray);
     }
 
@@ -178,12 +178,18 @@ public class Out {
             System.err.println("Error: " + ex.getMessage());
         }
     }
-  
-    
+
     public static String round(double a) {
         BigDecimal bd = new BigDecimal(a);
         bd = bd.setScale(2, RoundingMode.HALF_UP);
         System.out.println(bd);
         return bd.toString();
+    }
+
+    public static double round(double a, int scale) {
+        BigDecimal bd = new BigDecimal(a);
+        bd = bd.setScale(scale, RoundingMode.HALF_UP);
+        System.out.println(bd);
+        return (double) bd.doubleValue();
     }
 }
