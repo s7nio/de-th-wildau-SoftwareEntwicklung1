@@ -41,9 +41,14 @@ public class exercise2_CustomerID {
         int lastDigit = 10 - calculateSumOfID(IDArray) % 10;
         return Integer.toString(lastDigit);
     }
-    
-    public static String createValidID(String oldID, int[] IDArray) {
-        return oldID + createLastDigit(IDArray);
+
+    public static String createValidID(int[] IDArray) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < IDArray.length; i++) {
+            sb.append(IDArray[i]);
+        }
+        sb.append(createLastDigit(IDArray));
+        return sb.toString();
     }
 
     public static int[] StringToIntArray(String s) {
@@ -54,8 +59,6 @@ public class exercise2_CustomerID {
         return intArray;
     }
 
-    
-   
     public static void main(String[] args) {
 
         // parse ID from command line
@@ -66,8 +69,8 @@ public class exercise2_CustomerID {
 
         // print original ID
         StdOut.println("Original ID: " + ID);
-        
+
         // print valid ID
-        StdOut.println("   Valid ID: " + createValidID(Long.toString(ID), CustomerID));
+        StdOut.println("   Valid ID: " + createValidID(CustomerID));
     }
 }
