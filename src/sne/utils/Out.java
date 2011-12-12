@@ -182,14 +182,12 @@ public class Out {
     public static String round(double a) {
         BigDecimal bd = new BigDecimal(a);
         bd = bd.setScale(2, RoundingMode.HALF_UP);
-        System.out.println(bd);
         return bd.toString();
     }
 
     public static double round(double a, int scale) {
         BigDecimal bd = new BigDecimal(a);
         bd = bd.setScale(scale, RoundingMode.HALF_UP);
-        System.out.println(bd);
         return (double) bd.doubleValue();
     }
 }
