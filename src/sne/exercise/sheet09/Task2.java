@@ -1,4 +1,4 @@
-package sne.exercise.sheet9;
+package sne.exercise.sheet09;
 
 import StdLib.StdDraw;
 import StdLib.StdIn;

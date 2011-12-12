@@ -1,4 +1,4 @@
-package sne.exercise.sheet9;
+package sne.exercise.sheet09;
 
 import StdLib.StdAudio;
 import StdLib.StdIn;

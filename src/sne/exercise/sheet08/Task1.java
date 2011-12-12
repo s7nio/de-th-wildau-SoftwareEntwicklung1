@@ -1,4 +1,4 @@
-package sne.exercise.sheet8;
+package sne.exercise.sheet08;
 
 import StdLib.StdDraw;
 import java.awt.Color;

@@ -1,4 +1,4 @@
-package sne.exercise.sheet7;
+package sne.exercise.sheet07;
 
 import sne.utils.*;
 
