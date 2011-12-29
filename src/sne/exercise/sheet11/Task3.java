@@ -1,5 +1,7 @@
 package sne.exercise.sheet11;
 
+import StdLib.StdOut;
+
 /**
  * Binäre Suche. Schreiben Sie ein Programm zur Ermittlung des Inverswertes x0 der 
  * kumulierten Verteilungsfunktion Phi() an der Stelle y0.
@@ -24,5 +26,16 @@ public class Task3 {
 
     public static void main(String[] foo) {
         
+        double x = .9;
+        double y = .9;
+        double mu = 500;
+        double sigma = 100;
+        
+        Gaussian.Phi(x, mu, sigma);
+        Gaussian.PhiInverse(x, mu, sigma);
+        
+        
+        StdOut.println(Gaussian.Phi(628.1275978870779, 500, 100));
+        StdOut.println(Gaussian.PhiInverse(500, 100, 0.5));
     }
 }

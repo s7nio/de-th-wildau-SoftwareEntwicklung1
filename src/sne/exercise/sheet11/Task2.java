@@ -2,8 +2,6 @@ package sne.exercise.sheet11;
 
 import StdLib.StdIn;
 import StdLib.StdOut;
-import java.util.regex.Pattern;
-import sne.utils.*;
 
 /**
  * Die folgende Formel wird z.B. von Banken und Kreditkartenfirmen verwendet, um die 
@@ -31,12 +29,35 @@ public class Task2 {
 
         StdOut.print("Ihre Kundennummer: ");
         String input = StdIn.readString();
-
-        StdOut.println("Ist diese Kundenummer valid? => " + isCustomerNumber(input));
+        StdOut.println("Valide Kundenummer: " + customerNumber(input));
     }
-    
-    private static boolean isValidCustomerNumber(String numberString) {
-        
+
+    public static String customerNumber(String numberString) throws IllegalArgumentException {
+
+        validateCustomerNumber(numberString);
+
+        int sum = calcSum(numberString);
+
+        // validate last digit
+        String lastDigit = null;
+        if (sum % 10 != 0) {
+            if (sum != 0) {
+                lastDigit = String.valueOf(10 - sum % 10);
+            } else {
+                lastDigit = String.valueOf('0');
+            }
+        } else if (sum % 10 == 0) { // sum != 0
+            throw new IllegalArgumentException("The customer number is not valid.");
+        }
+
+        // append customer number
+        StringBuilder sb = new StringBuilder(numberString);
+        sb = sb.append(lastDigit);
+        return sb.toString();
+    }
+
+    private static void validateCustomerNumber(String numberString) throws IllegalArgumentException {
+
         /*
          * .	Any character (may or may not match line terminators)
          * \d	A digit: [0-9]
@@ -48,39 +69,35 @@ public class Task2 {
          */
         String regEx = "\\d+";
         if (!numberString.matches(regEx)) { // Pattern.matches(regEx, input)
-            //throw new IllegalStateException("This is not a customer number.");
-            return false;
+            throw new IllegalArgumentException("This is not a customer number.");
         }
-        return true;
     }
-    
-    private static boolean isCustomerNumber(String numberString) {
-     
-        int sum = 0;
-        boolean addChange = false;
+
+    private static int calcSum(String numberString) {
+
+        int _sum = 0;
+        boolean _switch = true;
+
         // sum over fields
         for (int i = 0; i < numberString.length(); i++) {
-            
-            if (addChange) {
-                sum += numberString.charAt(i); // FIXME [sne] check
-                addChange = false;
+
+            int _tmpValue = Character.getNumericValue(numberString.charAt(i));
+
+            if (_switch) { // i % 2 == 0
+                _sum += _tmpValue;
             } else {
-                //sum += Math.qs(2*d);
-                addChange = true;
+                _sum += theFunction(_tmpValue);
             }
+
+            _switch = !_switch;
         }
-        
-        // validate
-        if (sum % 10 == 0) {
-            
-        } else {
-            
-        }
-        
-        return false;
+
+        return _sum;
     }
-    
-    private static void digitSum() {
-        
+
+    private static int theFunction(int d) {
+
+        int _tmp = 2 * d;
+        return (_tmp / 10) + (_tmp % 10);
     }
 }
