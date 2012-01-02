@@ -38,11 +38,7 @@ public class Task1 {
      */
     private static boolean isTriangle(double a, double b, double c) {
         
-        double _powA = Math.pow(a, 2);
-        double _powB = Math.pow(b, 2);
-        double _powC = Math.pow(c, 2);
-        
-        if (Math.abs(a-b) >= c || Math.abs(a-c) >= b || Math.abs(b-c) >= a) {
+        if (a+b >= c || a+c >= b || b+c >= a) {
             return false;
         }
         return true;
