@@ -51,6 +51,8 @@ public class exercise2_CustomerID {
         return sb.toString();
     }
 
+    
+    
     public static int[] StringToIntArray(String s) {
         int[] intArray = new int[s.length()];
         for (int i = 0; i < s.length(); i++) {
@@ -58,6 +60,15 @@ public class exercise2_CustomerID {
         }
         return intArray;
     }
+    
+    
+    
+    
+    
+    
+    
+      
+    
 
     public static void main(String[] args) {
 

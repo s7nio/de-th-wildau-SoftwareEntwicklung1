@@ -45,7 +45,7 @@ public class Gaussian {
         int epsilon = 6;
         double z = 0.5;
         while (Out.round(Phi(z, mu, sigma), epsilon) != Out.round(y, epsilon)) {
-            StdOut.println(Out.round(Phi(z, mu, sigma), epsilon) + " " + Out.round(y, epsilon));
+
             if (y < Phi(z, mu, sigma)) {
                 z = z / 2;
             } else {

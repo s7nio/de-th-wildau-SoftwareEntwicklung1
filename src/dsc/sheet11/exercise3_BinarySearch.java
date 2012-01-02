@@ -18,9 +18,13 @@ public class exercise3_BinarySearch {
         StdOut.println(Gaussian.Phi(628.1275978870779, 500, 100));
         
         
-        StdOut.println(Gaussian.PhiInverse(500, 100, 0.5));
+        StdOut.println(Gaussian.PhiInverse(500, 100, 0.9));
         
-        StdOut.println(Gaussian.PhiInverse2(0.5));
+        
+        
+        
+        
+//        StdOut.println(Gaussian.PhiInverse2(0.5));
             
         
         
