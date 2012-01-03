@@ -29,7 +29,7 @@ public class Out {
         for (int i = 0; i < headline.length(); i++) {
             sb.append("=");
         }
-        System.out.println(headline);
+        System.out.println(sb.toString());
     }
 
     public static void printObjectArrayMessage(String message, double... doubleArray) {
