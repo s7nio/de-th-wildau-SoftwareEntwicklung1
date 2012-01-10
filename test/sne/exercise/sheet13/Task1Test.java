@@ -39,6 +39,7 @@ public class Task1Test {
     @Test
     public void testFakultaet() {
         System.out.println("testFakultaet");
+        // remove static from function f
         Task1 instance = new Task1();
         Assert.assertEquals(1, instance.f(0));
         Assert.assertEquals(1, instance.f(1));

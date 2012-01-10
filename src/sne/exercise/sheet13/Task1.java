@@ -11,7 +11,9 @@ import StdLib.StdOut;
 public class Task1 {
 
     public static int f(int n) {
-        if (n == 0) {
+        if (n < 0) {
+            throw new IllegalArgumentException("n must be greater than 0.");
+        } else if (n == 0) {
             return 1;
         }
         return n * f(n - 1);
